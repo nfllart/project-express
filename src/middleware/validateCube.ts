@@ -8,11 +8,9 @@ let schema = Joi.object({
     tinggi: Joi.number().required().min(1)
 })
 
-//create function for validation
+//create function for validationn
 let validateCube = (
-    request: Request,
-     response:Response,
-      next:NextFunction) => {
+    request: Request, response:Response, next:NextFunction) => {
         let {error} = schema.validate(request.body)
         if(error) {
             // status 400 = bad request
